@@ -78,7 +78,7 @@ class SectionsTest {
         Sections sections = new Sections();
         sections.init(교대역, 역삼역, 5);
 
-        assertThatThrownBy(() -> sections.add(new Section(역삼역, 교대역, 3)))
+        assertThatThrownBy(() -> sections.add(new Section(교대역, 역삼역, 3)))
             .isInstanceOf(AllRegisteredStationsException.class)
             .hasMessage("이미 상행역/하행역 모두 노선에 추가되어 있습니다.");
     }

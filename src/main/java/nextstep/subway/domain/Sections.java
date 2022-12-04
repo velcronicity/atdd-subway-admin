@@ -71,12 +71,9 @@ public class Sections {
     }
 
     private List<Station> allStations() {
-        List<Station> stations = this.sections.stream()
+        return this.sections.stream()
             .map(Section::getDownStation)
             .collect(Collectors.toList());
-        stations
-            .add(findByUpStation(null).orElseThrow(RuntimeException::new).getUpStation());
-        return stations;
     }
 
     private void validateLastSection() {
